@@ -1,0 +1,24 @@
+{
+  "scripts": {
+      "test": "jest"
+    , "dev": "gulp"
+    , "build": "gulp browserify"
+  },
+  "dependencies": {
+      "react": "*"
+    , "express": "*"
+  },
+  "devDependencies": {
+      "browser-sync": "*"
+    , "browserify": "*"
+    , "reactify": "*"
+    , "gulp": "*"
+    , "vinyl-source-stream": "*"
+    , "jest-cli": "*"
+    , "react-tools": "*"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  }
+}
