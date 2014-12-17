@@ -11,6 +11,12 @@ module.exports = yeoman.generators.Base.extend({
   prompting: function () {
   },
 
+  configuring: {
+    save: function () {
+      this.config.save();
+    }
+  },
+
   writing: {
     app: function () {
       this.fs.copy(
@@ -24,6 +30,10 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('gulpfile.js'),
         this.destinationPath('gulpfile.js')
+      );
+      this.fs.copy(
+        this.templatePath('webpack.config.js'),
+        this.destinationPath('webpack.config.js')
       );
       this.fs.copy(
         this.templatePath('index.html'),

@@ -2,7 +2,7 @@
   "scripts": {
       "test": "jest"
     , "dev": "gulp"
-    , "build": "gulp browserify"
+    , "build": "gulp webpack"
   },
   "dependencies": {
       "react": "*"
@@ -10,10 +10,11 @@
   },
   "devDependencies": {
       "browser-sync": "*"
-    , "browserify": "*"
-    , "reactify": "*"
+    , "webpack": "*"
+    , "jsx-loader": "*"
     , "gulp": "*"
-    , "vinyl-source-stream": "*"
+    , "gulp-load-plugins": "*"
+    , "gulp-util": "*"
     , "jest-cli": "*"
     , "react-tools": "*"
   },
