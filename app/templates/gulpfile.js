@@ -6,7 +6,7 @@ var webpack = require('webpack');
 gulp.task('browserSync', function () {
   browserSync({
     server: {
-      baseDir: ['app']
+      baseDir: ['.tmp', 'app']
     }
   });
 });
@@ -28,7 +28,7 @@ gulp.task('webpack', function (done) {
   });
 });
 
-gulp.task('watch', ['webpack', 'browserSync']function () {
+gulp.task('watch', ['webpack', 'browserSync'], function () {
   gulp.watch(['src/**/*.{js,jsx}'], ['webpack']);
   gulp.watch(['app/*.html', '.tmp/**/*.js'], ['browserSyncReload']);
 });
