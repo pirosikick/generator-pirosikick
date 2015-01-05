@@ -3,8 +3,8 @@
 ## yo pirosikick
 
 - React
-- Browserify
-- Reactify
+- WebPack
+- JSX-Loader
 - Jest
 
 ```sh
