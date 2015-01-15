@@ -11,3 +11,12 @@
 $ yo pirosikick
 $ npm run
 ```
+
+## yo pirosikick:npm
+
+- for NPM Package
+
+### Feature
+
+- ES6(6to5)
+- power-assert
