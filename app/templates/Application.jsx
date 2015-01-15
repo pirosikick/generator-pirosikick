@@ -1,4 +1,6 @@
-var React = require('react');
+import React from 'react';
+
+export default Application;
 
 var Application = React.createClass({
   render () {
@@ -7,5 +9,3 @@ var Application = React.createClass({
     );
   }
 });
-
-module.exports = Application;
