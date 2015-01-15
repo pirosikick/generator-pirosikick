@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var _ = require('lodash');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -19,42 +20,17 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-      this.fs.copy(
-        this.templatePath('gulpfile.js'),
-        this.destinationPath('gulpfile.js')
-      );
-      this.fs.copy(
-        this.templatePath('webpack.config.js'),
-        this.destinationPath('webpack.config.js')
-      );
-      this.fs.copy(
-        this.templatePath('index.html'),
-        this.destinationPath('app/index.html')
-      );
-      this.fs.copy(
-        this.templatePath('client.jsx'),
-        this.destinationPath('src/client.jsx')
-      );
-      this.fs.copy(
-        this.templatePath('Application.jsx'),
-        this.destinationPath('src/components/Application.jsx')
-      );
-      this.fs.copy(
-        this.templatePath('Application-test.js'),
-        this.destinationPath('__tests__/Application-test.js')
-      );
-      this.fs.copy(
-        this.templatePath('preprocessor.js'),
-        this.destinationPath('preprocessor.js')
-      );
+      this._copyEach({
+          '_package.json': 'package.json'
+        , '_bower.json': 'bower.json'
+        , 'gulpfile.js': 'gulpfile.js'
+        , 'webpack.config.js': 'webpack.config.js'
+        , 'index.html': 'app/index.html'
+        , 'client.jsx': 'src/client.jsx'
+        , 'Application.jsx': 'src/components/Application.jsx'
+        , 'Application-test.js': '__tests__/Application-test.js'
+        , 'preprocessor.js': 'preprocessor.js'
+      });
     },
 
     projectfiles: function () {
@@ -67,5 +43,14 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     this.installDependencies();
+  },
+
+  _copyEach: function (map) {
+    _.each(map, function (dest, templatePath) {
+      this.fs.copy(
+        this.templatePath(templatePath),
+        this.destinationPath(dest)
+      );
+    }, this);
   }
 });

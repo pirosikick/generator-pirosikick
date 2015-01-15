@@ -9,14 +9,18 @@
     , "express": "*"
   },
   "devDependencies": {
-      "browser-sync": "*"
-    , "webpack": "*"
-    , "jsx-loader": "*"
+      "6to5": "^2.12.4"
+    , "6to5-loader": "^2.0.0"
+    , "browser-sync": "*"
+    , "exports-loader": "^0.6.2"
     , "gulp": "*"
     , "gulp-load-plugins": "*"
     , "gulp-util": "*"
+    , "imports-loader": "^0.6.3"
     , "jest-cli": "*"
+    , "jsx-loader": "*"
     , "react-tools": "*"
+    , "webpack": "*"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",

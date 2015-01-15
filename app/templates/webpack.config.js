@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: {
     client: './src/client.jsx'
@@ -8,7 +10,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test:  /\.jsx$/, loader: 'jsx-loader?harmony' }
+      { test:  /\.(js|jsx)$/, exclude: /node_modules/, loader: '6to5-loader?experimental&runtime' }
+    ],
+    plugins: [
+      new webpack.ProvidePlugin({
+        to5Runtime: "imports?global=>{}!exports?global.to5Runtime!6to5/runtime"
+      })
     ]
   }
 }
