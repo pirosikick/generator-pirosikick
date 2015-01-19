@@ -1,5 +1,6 @@
 'use strict';
 var yeoman = require('yeoman-generator');
+var _ = require('lodash');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -49,30 +50,29 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: function () {
+    var data = { packageName: this.packageName, description: this.description };
 
-    this.fs.copyTpl(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
-      { packageName: this.packageName, description: this.description }
-    );
+    var files = [
+        ['_package.json', 'package.json', data]
+      , ['index.js', 'index.js']
+      , ['src/index.js', 'src/index.js']
+      , ['test/index.js', 'test/index.js']
+    ];
 
-    this.fs.copy(
-      this.templatePath('index.js'),
-      this.destinationPath('index.js')
-    );
+    _.each(files, function (files) {
+      var src = this.templatePath(files[0])
+        , dest = this.destinationPath(files[1]);
 
-    this.fs.copy(
-      this.templatePath('src/index.js'),
-      this.destinationPath('src/index.js')
-    );
-
-    this.fs.copy(
-      this.templatePath('test/index.js'),
-      this.destinationPath('test/index.js')
-    );
+      files[2]
+        ? this.fs.copyTpl(src, dest, files[2])
+        : this.fs.copy(src, dest);
+    }, this);
   },
 
   install: function () {
-    this.installDependencies({ bower: false });
+    this.installDependencies({
+        skipInstall: this.options['skip-install']
+      , bower: false
+    });
   }
 });

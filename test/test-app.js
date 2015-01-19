@@ -20,8 +20,14 @@ describe('pirosikick:app', function () {
     assert.file([
       'bower.json',
       'package.json',
-      '.editorconfig',
-      '.jshintrc'
+      'gulpfile.js',
+      'webpack.config.js',
+      '.jshintrc',
+      'app/index.html',
+      'src/client.jsx',
+      'src/components/Application.jsx',
+      '__tests__/Application-test.js',
+      'preprocessor.js'
     ]);
   });
 });
