@@ -1,7 +1,5 @@
 import React from 'react';
 
-export default Application;
-
 var Application = React.createClass({
   render () {
     return (
@@ -9,3 +7,5 @@ var Application = React.createClass({
     );
   }
 });
+
+export default Application;

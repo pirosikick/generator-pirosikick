@@ -11,11 +11,11 @@ module.exports = {
   module: {
     loaders: [
       { test:  /\.(js|jsx)$/, exclude: /node_modules/, loader: '6to5-loader?experimental&runtime' }
-    ],
-    plugins: [
-      new webpack.ProvidePlugin({
-        to5Runtime: "imports?global=>{}!exports?global.to5Runtime!6to5/runtime"
-      })
     ]
   }
+  plugins: [
+    new webpack.ProvidePlugin({
+      to5Runtime: "imports?global=>{}!exports?global.to5Runtime!6to5/runtime"
+    })
+  ]
 }
