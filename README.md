@@ -1,22 +1,35 @@
-# generator-pirosikick
+# generator-pirosikick [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> Yeoman Generator for @pirosikick
 
-## yo pirosikick
+## Installation
 
-- React
-- WebPack
-- JSX-Loader
-- Jest
+First, install [Yeoman](http://yeoman.io) and generator-pirosikick using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-```sh
-$ yo pirosikick
-$ npm run
+```bash
+npm install -g yo
+npm install -g generator-pirosikick
 ```
 
-## yo pirosikick:npm
+Then generate your new project:
 
-- for NPM Package
+```bash
+yo pirosikick
+```
 
-### Feature
+## Getting To Know Yeoman
 
-- ES6(6to5)
-- power-assert
+Yeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
+
+## License
+
+MIT © [Hiroyuki Anai](https://github.com/pirosikick/)
+
+
+[npm-image]: https://badge.fury.io/js/generator-pirosikick.svg
+[npm-url]: https://npmjs.org/package/generator-pirosikick
+[travis-image]: https://travis-ci.org/pirosikick/generator-pirosikick.svg?branch=master
+[travis-url]: https://travis-ci.org/pirosikick/generator-pirosikick
+[daviddm-image]: https://david-dm.org/pirosikick/generator-pirosikick.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/pirosikick/generator-pirosikick
+[coveralls-image]: https://coveralls.io/repos/pirosikick/generator-pirosikick/badge.svg
+[coveralls-url]: https://coveralls.io/r/pirosikick/generator-pirosikick
