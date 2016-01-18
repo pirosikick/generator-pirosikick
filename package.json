@@ -9,7 +9,9 @@
     "url": "https://github.com/pirosikick/"
   },
   "files": [
-    "generators"
+    "generators/app",
+    "generators/web/index.js",
+    "generators/web/templates"
   ],
   "main": "generators/index.js",
   "keywords": [
@@ -31,6 +33,7 @@
     "gulp-mocha": "^2.0.0",
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
     "yeoman-assert": "^2.0.0"
   },
   "repository": "https://github.com/pirosikick/generator-pirosikick",

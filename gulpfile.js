@@ -52,5 +52,19 @@ gulp.task('coveralls', ['test'], function () {
     .pipe($.coveralls());
 });
 
-gulp.task('prepublish', ['nsp']);
-gulp.task('default', ['static', 'test', 'coveralls']);
+gulp.task('copy-templates', ['copy-templates:web']);
+gulp.task('copy-templates:web', function () {
+  const src = [
+    'generators/web/_templates/**/*.{js,css,html,json}',
+    'generators/web/_templates/**/.gitignore',
+    '!generators/web/_templates/bin'
+  ];
+  return gulp.src(src)
+    .pipe($.rename(path => {
+      path.basename = path.basename.replace(/^\./, '_');
+    }))
+    .pipe(gulp.dest('generators/web/templates'));
+});
+
+gulp.task('prepublish', ['copy-templates', 'nsp']);
+gulp.task('default', ['copy-templates', 'static', 'test', 'coveralls']);

@@ -49,7 +49,7 @@ module.exports = yeoman.generators.Base.extend({
     });
 
     this._write('package.json', JSON.stringify(packageJSON, null, 2));
-    this._copy('.gitignore');
+    this._copy('_gitignore', '.gitignore');
     this._copy('gulpfile.js');
     this._copy('webpack.config.js');
     this._copy('src/client.js');
