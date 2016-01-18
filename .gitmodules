@@ -1,0 +1,3 @@
+[submodule "generators/web/templates"]
+	path = generators/web/templates
+	url = https://github.com/pirosikick/hiden-no-tare.web.git

@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
 gulp.task('static', function () {
-  return gulp.src('**/*.js')
+  return gulp.src(['**/*.js', '!generators/*/templates/**'])
     .pipe($.excludeGitignore())
     .pipe($.eslint())
     .pipe($.eslint.format())
@@ -16,7 +16,7 @@ gulp.task('nsp', function (cb) {
 });
 
 gulp.task('pre-test', function () {
-  return gulp.src('generators/**/*.js')
+  return gulp.src('generators/*/*.js')
     .pipe($.excludeGitignore())
     .pipe($.istanbul({
       includeUntested: true
