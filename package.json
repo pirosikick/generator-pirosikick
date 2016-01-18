@@ -18,7 +18,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.21.1",
+    "yeoman-generator": "^0.22.4",
     "chalk": "^1.0.0",
     "yosay": "^1.0.2"
   },
@@ -34,7 +34,8 @@
     "gulp-nsp": "^2.1.0",
     "gulp-plumber": "^1.0.0",
     "gulp-rename": "^1.2.2",
-    "yeoman-assert": "^2.0.0"
+    "yeoman-assert": "^2.0.0",
+    "yeoman-test": "^1.0.0"
   },
   "repository": "https://github.com/pirosikick/generator-pirosikick",
   "scripts": {

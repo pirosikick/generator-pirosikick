@@ -1,10 +1,10 @@
 'use strict';
 const path = require('path');
-const yeoman = require('yeoman-generator');
+const Base = require('yeoman-generator').Base;
 
 const username = 'pirosikick';
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = Base.extend({
   initializing() {
     this.option('skip-install');
   },
