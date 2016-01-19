@@ -11,7 +11,9 @@
   "files": [
     "generators/app",
     "generators/web/index.js",
-    "generators/web/templates"
+    "generators/web/templates",
+    "generators/npm/index.js",
+    "generators/npm/templates"
   ],
   "main": "generators/index.js",
   "keywords": [
