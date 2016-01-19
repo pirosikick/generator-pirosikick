@@ -3,9 +3,9 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
-describe('generator-pirosikick:web', function () {
+describe('generator-pirosikick:npm', function () {
   before(function (done) {
-    helpers.run(path.join(__dirname, '../generators/web'))
+    helpers.run(path.join(__dirname, '../generators/npm'))
       .withOptions({ 'skip-install': true })
       .withPrompts({
         userName: 'pirosikick',
@@ -18,12 +18,10 @@ describe('generator-pirosikick:web', function () {
     assert.file([
       'package.json',
       '.gitignore',
+      '.travis.yml',
+      '.eslintrc.json',
       'gulpfile.js',
-      'webpack.config.js',
-      'src/client.js',
-      'src/styles/main.css',
-      'src/styles/_hello.css',
-      'public/index.html',
+      'src/index.js',
       'test/index.js',
       'README.md'
     ]);

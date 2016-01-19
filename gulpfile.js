@@ -52,10 +52,10 @@ gulp.task('coveralls', ['test'], function () {
     .pipe($.coveralls());
 });
 
-gulp.task('copy-templates', ['copy-templates:web']);
+gulp.task('copy-templates', ['copy-templates:web', 'copy-templates:npm']);
 gulp.task('copy-templates:web', function () {
   const src = [
-    'generators/web/_templates/**/*.{js,css,html,json}',
+    'generators/web/_templates/**/*.{js,css,html,md,json}',
     'generators/web/_templates/**/.gitignore',
     '!generators/web/_templates/bin'
   ];
@@ -64,6 +64,19 @@ gulp.task('copy-templates:web', function () {
       path.basename = path.basename.replace(/^\./, '_');
     }))
     .pipe(gulp.dest('generators/web/templates'));
+});
+gulp.task('copy-templates:npm', function () {
+  const src = [
+    'generators/npm/_templates/**/*.{js,yml,md,json}',
+    'generators/npm/_templates/**/.travis.yml',
+    'generators/npm/_templates/**/.eslintrc.json',
+    'generators/npm/_templates/**/.gitignore'
+  ];
+  return gulp.src(src)
+    .pipe($.rename(path => {
+      path.basename = path.basename.replace(/^\./, '_');
+    }))
+    .pipe(gulp.dest('generators/npm/templates'));
 });
 
 gulp.task('prepublish', ['copy-templates', 'nsp']);
