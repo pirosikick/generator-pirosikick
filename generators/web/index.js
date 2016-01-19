@@ -13,6 +13,14 @@ module.exports = Base.extend({
   writing() {
     let json = this._packageJSON(require('./templates/package.json'));
     this._write('package.json', JSON.stringify(json, null, 2));
+    this._write('README.md', `
+# ${this.props.projectName}
+
+## License
+
+[MIT](http://${this.props.userName}.mit-License.org/)
+`);
+
     this._copy('_gitignore', '.gitignore');
     this._copy('gulpfile.js');
     this._copy('webpack.config.js');
@@ -21,7 +29,6 @@ module.exports = Base.extend({
     this._copy('src/styles/_hello.css');
     this._copy('public/index.html');
     this._copy('test/index.js');
-    this._copy('README.md');
   },
 
   install() {
