@@ -9,6 +9,7 @@
     "url": "https://github.com/pirosikick/"
   },
   "files": [
+    "generators/base.js",
     "generators/app",
     "generators/web/index.js",
     "generators/web/templates",
