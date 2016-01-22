@@ -10,7 +10,7 @@ module.exports = Base.extend({
         type: 'input',
         name: 'userName',
         message: 'Who are you?',
-        default: Base.defaultUserName
+        default: defaultUserName
       },
       {
         type: 'input',
