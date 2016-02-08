@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "eslint-plugin-node": "^0.5.1",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-coveralls": "^0.1.0",
     "gulp-eslint": "^1.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
