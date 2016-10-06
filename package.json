@@ -23,7 +23,7 @@
   "dependencies": {
     "yeoman-generator": "^0.22.4",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.2"
+    "yosay": "^1.2.1"
   },
   "devDependencies": {
     "eslint-plugin-node": "^0.5.1",
